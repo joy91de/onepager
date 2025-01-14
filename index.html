@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>復古視窗可移動表單</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- 初始視窗 -->
+  <div class="window-container" id="draggable0">
+    <div class="topbar">Notice</div>
+    <h1 class="startbox">Hallo! Try me out!</h1>
+    <span>(The data will not be saved.)</span>
+  </div>
+
+  <!-- 第一個視窗 -->
+  <div class="window-container" id="draggable1">
+    <div class="topbar">input</div>
+    <h1>Login</h1>
+    <form class="form">
+      <div class="form-group">
+        <input type="text" id="name" required>
+        <label for="name">Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" required>
+        <label for="password">Password</label>
+      </div>
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+
+  <!-- 第二個視窗 -->
+  <div class="window-container" id="draggable2">
+    <div class="topbar">select</div>
+    <h1>Mood Chart</h1>
+    <div class="chartbox">
+      <div class="mood-flex">
+        <div class="mood-image">
+          <img src="img/moodchart-5.png" alt="super">
+          <div class="mood-label">
+            <label for="super">super</label>
+            <input type="radio" id="super" name="moodlevel" value="5" checked />
+          </div>
+        </div>
+        <div class="mood-image">
+          <img src="img/moodchart-4.png" alt="gut">
+          <div class="mood-label">
+            <label for="gut">gut</label>
+            <input type="radio" id="gut" name="moodlevel" value="4" />
+          </div>
+        </div>
+        <div class="mood-image">
+          <img src="img/moodchart-3.png" alt="normal">
+          <div class="mood-label">
+            <label for="normal">normal</label>
+            <input type="radio" id="normal" name="moodlevel" value="3" />
+          </div>
+        </div>
+        <div class="mood-image">
+          <img src="img/moodchart-2.png" alt="nein">
+          <div class="mood-label">
+            <label for="nein">naja</label>
+            <input type="radio" id="nein" name="moodlevel" value="2" />
+          </div>
+        </div>
+        <div class="mood-image">
+          <img src="img/moodchart-1.png" alt="schlecht">
+          <div class="mood-label">
+            <label for="schlecht">schlecht</label>
+            <input type="radio" id="schlecht" name="moodlevel" value="1" />
+          </div>
+        </div>
+      </div>
+      <button type="submit">Enter</button>
+    </div>
+  </div>
+
+    <!-- 第三個視窗 -->
+  <div class="window-container" id="draggable3">
+    <div class="topbar">dropdown</div>
+    <h1>Numbers</h1>
+    <form class="form">
+      <div class="form-group">
+        <label for="birthdate"></label>
+        <input type="date" id="birthdate" name="birthdate">
+      </div>
+      <div class="form-group">
+       <label for="appointment"></label>
+        <input type="time" id="appointment" name="appointment">
+      </div>
+      <div class="form-group">
+        <label for="phone"></label>
+        <input type="tel" id="phone" name="phone" placeholder="May I have ur number?">
+      </div>
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+
+    <!-- 第四個視窗 -->
+  <div class="window-container" id="draggable4">
+    <div class="topbar">filter</div>
+    <h1>Lieblingsserie</h1>
+    <div class="album-container">
+      <div class="album-display">
+        <img id="current-album" src="https://cdn.lesnumeriques.com/optim/product/75/75230/3eff79e3-fleabag__1200_1200__overflow.jpg" alt="Album Cover">
+      </div>
+      <div class="album-wrap">
+        <div class="album-list">
+          <div class="album" data-album="1">
+            <img src="https://cdn.lesnumeriques.com/optim/product/75/75230/3eff79e3-fleabag__1200_1200__overflow.jpg" alt="Album 1">
+            <p class="album-title">Fleabag - Amazon Prime</p>
+          </div>
+
+          <div class="album" data-album="2">
+            <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8480e1767dbde7183338cf4e23" alt="Album 2">
+            <p class="album-title">Antypical - Netflix</p>
+          </div>
+
+          <div class="album" data-album="3">
+            <img src="https://assets1.ignimgs.com/2016/08/25/modernfamilyver14xlgjpg-3131b0.jpg" alt="Album 3">
+            <p class="album-title">Modern Family - Disney+</p>
+          </div>
+
+          <div class="album" data-album="4">
+            <img src="https://musicart.xboxlive.com/7/038a5100-0000-0000-0000-000000000002/504/image.jpg" alt="Album 4">
+            <p class="album-title">The Bigbang Theory - Netflix</p>
+          </div>
+
+          <div class="album" data-album="5">
+            <img src="https://media1.jpc.de/image/w1155/front/0/0888430926523.jpg" alt="Album 1">
+            <p class="album-title">Breaking Bad - Netflix</p>
+          </div>
+
+          <div class="album" data-album="6">
+            <img src="https://images.squarespace-cdn.com/content/v1/5a4aa5f8a8b2b012eff50b4e/1688154774469-7UM0SJVLKVMIERL9RHYW/The+Bear+season+2.jpeg?format=500w" alt="Album 2">
+            <p class="album-title">The Bear - Disney+</p>
+          </div>
+
+          <div class="album" data-album="7">
+            <img src="https://i.scdn.co/image/ab67616d0000b2735ed264d320b5e685b455825f" alt="Album 3">
+            <p class="album-title">The Morning Show - Apple TV</p>
+          </div>
+
+          <div class="album" data-album="8">
+            <img src="https://i.scdn.co/image/ab67616d0000b273fa68ef0fcbf9e5459628be25" alt="Album 8">
+            <p class="album-title">Baby Reindeer - Netflix</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> 
+
+</body>
+
+
+
+
+  <script>
+    // 確保每個表單都可以拖動
+    const dragElements = document.querySelectorAll(".window-container");
+
+    dragElements.forEach((element) => {
+      let isDragging = false;
+      let offsetX = 0, offsetY = 0;
+      let initialX, initialY;
+
+      // 拖曳開始，綁定到 window-container
+      element.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        initialX = e.clientX - offsetX;
+        initialY = e.clientY - offsetY;
+        element.style.cursor = "move";
+      });
+
+      // 拖曳中，當滑鼠移動時更新位置
+      document.addEventListener("mousemove", (e) => {
+        if (isDragging) {
+          offsetX = e.clientX - initialX;
+          offsetY = e.clientY - initialY;
+          element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        }
+      });
+
+      // 停止拖曳，取消游標樣式
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+        element.style.cursor = "default";
+      });
+    });
+
+    // Select all album elements
+    const albums = document.querySelectorAll('.album');
+    const currentAlbumImage = document.getElementById('current-album');
+
+    // Add click event listener to each album
+    albums.forEach(album => {
+      album.addEventListener('click', () => {
+        // Get the clicked album image source
+        const albumSrc = album.querySelector('img').src;
+        currentAlbumImage.src = albumSrc; // Update the main album image
+
+    // Remove the 'clicked' class from all album titles
+    document.querySelectorAll('.album-title').forEach(title => title.classList.remove('clicked'));
+
+    // Get the title of the clicked album and add the 'clicked' class to it
+    const albumTitle = album.querySelector('.album-title');
+    albumTitle.classList.add('clicked');
+  });
+});
+  </script>
+</body>
+</html>

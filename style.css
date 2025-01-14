@@ -1,0 +1,321 @@
+@import url('https://fonts.cdnfonts.com/css/chicago-2');
+
+/**{border: 1px solid #000 !important;}*/
+
+body {
+  display: grid;
+  padding: 50px;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  place-content: center;
+  height: 100vh;
+  font-family: "Chicago";
+  background-color: #f4f4f4;
+  --default: url("data:image/svg+xml,%3Csvg width='10' height='46' viewBox='0 0 48 84' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6 3V6H9H12V9V12H15H18V15V18H21H24V21V24H27H30V27V30H33H36V33V36H39H42V39V42H45H48V45V48H39H30V54V60H33H36V66V72H39H42V78V84H36H30V78V72H27H24V66V60H21H18V57V54H15H12V57V60H9H6V63V66H3H0V33V0H3H6V3Z' fill='black'/%3E%3C/svg%3E%0A")
+    16 16, pointer;
+  --pointer: url("data:image/svg+xml,%3Csvg width='15' height='29' viewBox='0 0 90 114' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M42 3V6H45H48V21V36H54H60V39V42H66H72V45V48H78H84V51V54H87H90V69V84H87H84V90V96H81H78V105V114H75H72V105V96H75H78V90V84H81H84V69V54H78H72V51V48H66H60V45V42H51H42V24V6H36H30V36V66H27H24V60V54H21H18V51V48H12H6V51V54H9H12V60V66H15H18V75V84H21H24V90V96H27H30V99V102H33H36V108V114H33H30V108V102H27H24V99V96H21H18V90V84H15H12V75V66H9H6V60V54H3H0V48V42H9H18V45V48H21H24V27V6H27H30V3V0H36H42V3Z' fill='black'/%3E%3Cpath d='M72 114V105V96H75H78V90V84H81H84V69V54H78H72V51V48H66H60V45V42H51H42V24V6H36H30V36V66H27H24V60V54H21H18V51V48H12H6V51V54H9H12V60V66H15H18V75V84H21H24V90V96H27H30V99V102H33H36V108V114H72Z' fill='white'/%3E%3C/svg%3E%0A")
+    16 16, pointer;
+  cursor: var(--default);
+  background: linear-gradient(
+      to bottom,
+      #000 2px,
+      #fff 2px,
+      #fff 24px,
+      #000 24px,
+      #000 26px,
+      transparent 26px
+    ),
+    radial-gradient(circle at center, #000 1px, #fff 0.5px, #fff 2px) 0 0 / 2px
+      2px repeat;
+  --darkBg: radial-gradient(circle at center, #000 1px, #555 1px, #555 2px) 0 0 /
+    2px 2px;
+  --lightBg: radial-gradient(circle at center, #ccc 0.5px, #fff 0.5px, #fff 2px)
+    0 0 / 2px 2px;
+  --windowBg: linear-gradient(to right, #fff, #fff) 6.5px 7px / 9px 9px
+      no-repeat,
+    linear-gradient(to right, #000, #000) 5.5px 6px / 11px 11px no-repeat,
+    linear-gradient(
+      to bottom,
+      transparent 21px,
+      #000 21px,
+      #000 23px,
+      transparent 23px
+    ),
+    linear-gradient(
+      to bottom,
+      #fff 3px,
+      transparent 3px,
+      transparent 20px,
+      #fff 20px
+    ),
+    linear-gradient(
+      to right,
+      #fff 2px,
+      transparent 2px,
+      transparent calc(100% - 2px),
+      #fff calc(100% - 2px)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #222 1px,
+      #fff 1px,
+      #fff 2px,
+      #222 2px,
+      #222 3px
+    ),
+    #fff;
+    --windowShadow: 0 0 0 1px #000, 2px 2px 0 #000;
+    }
+
+.window-container {
+  background: var(--windowBg);
+  box-shadow: var(--windowShadow);
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+
+.topbar{
+  padding: 0px 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+h1 {
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.startbox{
+  padding-top: 5%;
+}
+
+span{
+  display: inline-block;
+  margin-top: -5%;
+  color: #9e9e9e;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 180px;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background: var(--lightBg);
+  box-sizing: border-box;
+}
+
+ .form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input::placeholder {
+  font-family: "Chicago";
+  font-size: 12px;
+}
+
+.form-group label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: #555;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label {
+/*    top: -20px;*/
+/*    left: 10px;*/
+/*    font-size: 10px;*/
+  color: transparent;
+}
+
+button {
+  width: 80%;
+  padding: 5px;
+  margin-top: 10px;
+  background: var(--lightBg);
+  border: none;
+  font-size: 14px;
+  color: #000;
+  cursor: var(--pointer);
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 2px #000;
+  transition: all 0.3s;
+  font-family: 'Chicago', sans-serif;
+  box-shadow: inset 0 0 0 1px #333, 0 0 0 2px #fff, 0 0 0 5px #333;
+
+}
+
+button:hover {
+  background: var(--darkBg);
+  color: #fff;
+  border: #000;
+  box-shadow: inset 0 0 0 2px #;
+}
+
+
+/* 心情表 */
+
+.chartbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mood-flex, .ratiobtn-wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.ratiobtn-wrap{
+  justify-content: space-between;
+  width: 100%;  /* 使容器佔滿整個寬度 */
+}
+
+.mood-flex{
+  padding: 0 5% 5% 5%;
+}
+
+.mood-image img{
+  width: 80%;
+}
+.mood-label label{
+  padding: 5%;
+  font-size: 12px;
+}
+.chartbox, .mood-label, .mood-image{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* 音樂視窗 */
+
+.album-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #666;
+}
+
+.album-container img{
+ filter: saturate(0) brightness(1.25) url(#dither);
+ aspect-ratio: 1 / 1; 
+}
+
+.album-list{
+  width: 100%;
+  hight: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.album-list img{
+  display: none;
+}
+
+.album-display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.album-wrap, .album-display img{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.album-list{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+
+.album p{
+  margin: 0;
+  font-size: 12px;
+  padding-left: 20px;
+  color: #a6a6a6;
+}
+
+.album-title {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.album-title.clicked {
+  color: #000; /* Set the color to red when clicked */
+}
+
+
+/* 視窗定位 */
+
+#draggable0{
+  z-index: 9999999;
+  place-items: center
+}
+
+#draggable1{
+  position: absolute;
+  bottom: 51%;
+  right: 52%;
+  width: 20%;
+}
+
+#draggable2{
+  position: absolute;
+  bottom: 51%;
+  left: 51%;
+}
+
+#draggable3{
+  position: absolute;
+  top: 53%;
+  left: 51%;
+}
+
+#draggable4{
+  position: absolute;
+  top: 53%;
+  right: 52%;
+}
+
+
