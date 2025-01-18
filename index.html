@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hallo, input</title>
+  <!-- <link rel="stylesheet" href="reset.css"> -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./img/favicon.png" type="image/png">
+</head>
+
+<body>
+  <nav>
+    <div class="hamberger">☺︎</div>
+    <div class="dropdown">
+      <p class="h3">Hallo!</p>
+      <p class="text">
+        This one-pager aims to introduce the HTML <span>input</span> element. In each window's <span>hover</span> state, you can find related introductions to the respective input components.<br/><br/>The webpage uses JavaScript to achieve a drag-and-drop effect, presenting a retro-style window system. Additionally, the JavaScript events are also used to create the "Lieblingsserie" section, where I share my collection of favorite TV shows and recommend them to you. <br/><br/>
+        BTW, I hid an <span>Easter egg</span> on the website. Enjoy! <br/><br/>
+        Joy Tsao ☺︎ <span class="year">2025 in FH;P</span>
+      </p>
+    </div>
+  </nav>
+  <!-- 初始視窗 -->
+  <div class="window-container notice" id="draggable0">
+    <div class="topbar">Notice</div>
+    <h1 class="startbox">Hallo! Try me out!</h1>
+    <span>(The data will not be saved.)</span>
+  </div>
+
+  <!-- 第一個視窗 -->
+  <div class="window-container" id="draggable1">
+    <div class="topbar">input</div>
+    <h1>Login</h1>
+    <form class="form">
+      <div class="form-group">
+        <input type="text" id="name" required>
+        <label for="name">Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" required>
+        <label for="password">Password</label>
+      </div>
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+
+  <!-- 第二個視窗 -->
+  <div class="window-container" id="draggable2">
+    <div class="topbar">select</div>
+    <h1>Mood Chart</h1>
+    <div class="chartbox">
+      <div class="mood-flex">
+        <div class="mood-image">
+          <img src="img/moodchart-5.png" alt="super">
+          <div class="mood-label">
+            <label for="super">super</label>
+            <input type="radio" class="radio" id="super" name="moodlevel" value="5" checked />
+          </div>
+        </div>
+        <div class="mood-image">
+          <img src="img/moodchart-4.png" alt="gut">
+          <div class="mood-label">
+            <label for="gut">gut</label>
+            <input type="radio" class="radio" id="gut" name="moodlevel" value="4" />
+          </div>
+        </div>
+        <div class="mood-image">
+          <img src="img/moodchart-3.png" alt="normal">
+          <div class="mood-label">
+            <label for="normal">normal</label>
+            <input type="radio" class="radio" id="normal" name="moodlevel" value="3" />
+          </div>
+        </div>
+        <div class="mood-image">
+          <img src="img/moodchart-2.png" alt="nein">
+          <div class="mood-label">
+            <label for="nein">naja</label>
+            <input type="radio" class="radio" id="nein" name="moodlevel" value="2" />
+          </div>
+        </div>
+        <div class="mood-image">
+          <img src="img/moodchart-1.png" alt="schlecht">
+          <div class="mood-label">
+            <label for="schlecht">schlecht</label>
+            <input type="radio" class="radio" id="schlecht" name="moodlevel" value="1" />
+          </div>
+        </div>
+      </div>
+      <button type="submit">Enter</button>
+    </div>
+  </div>
+
+  <!-- 第三個視窗 -->
+  <div class="window-container" id="draggable3">
+    <div class="topbar">dropdown</div>
+    <h1>Numbers</h1>
+    <form class="form">
+      <div class="form-group">
+        <label for="birthdate"></label>
+        <input type="date" id="birthdate" name="birthdate">
+      </div>
+      <div class="form-group">
+       <label for="appointment"></label>
+        <input type="time" id="appointment" name="appointment">
+      </div>
+      <div class="form-group">
+        <label for="phone"></label>
+        <input type="tel" id="phone" name="phone" placeholder="May I have ur number?">
+      </div>
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+
+  <!-- 第四個視窗 -->
+  <div class="window-container" id="draggable4">
+    <div class="topbar">filter</div>
+    <h1>Lieblingsserie</h1>
+    <div class="album-container">
+      <div class="album-display">
+        <img id="current-album" src="./img/tv_20250118.jpg" alt="Album Cover">
+      </div>
+      <div class="album-wrap">
+        <div class="album-list">
+          <div class="album" data-album="1">
+            <img src="https://cdn.lesnumeriques.com/optim/product/75/75230/3eff79e3-fleabag__1200_1200__overflow.jpg" alt="Album 1">
+            <div class="playicon">▶︎   </div>
+            <p class="album-title">Fleabag - Amazon Prime</p>
+          </div>
+
+          <div class="album" data-album="2">
+            <img src="https://image-cdn-ak.spotifycdn.com/image/ab67706c0000da8480e1767dbde7183338cf4e23" alt="Album 2">
+            <div class="playicon">▶︎   </div>
+            <p class="album-title">Atypical - Netflix</p>
+          </div>
+
+          <div class="album" data-album="3">
+            <img src="https://assets1.ignimgs.com/2016/08/25/modernfamilyver14xlgjpg-3131b0.jpg" alt="Album 3">
+            <div class="playicon">▶︎   </div>
+            <p class="album-title">Modern Family - Disney+</p>
+          </div>
+
+          <div class="album" data-album="4">
+            <img src="https://musicart.xboxlive.com/7/038a5100-0000-0000-0000-000000000002/504/image.jpg" alt="Album 4">
+            <div class="playicon">▶︎   </div>
+            <p class="album-title">The Bigbang Theory - Netflix</p>
+          </div>
+
+          <div class="album" data-album="5">
+            <img src="https://media1.jpc.de/image/w1155/front/0/0888430926523.jpg" alt="Album 5">
+            <div class="playicon">▶︎   </div>
+            <p class="album-title">Breaking Bad - Netflix</p>
+          </div>
+
+          <div class="album" data-album="6">
+            <img src="https://images.squarespace-cdn.com/content/v1/5a4aa5f8a8b2b012eff50b4e/1688154774469-7UM0SJVLKVMIERL9RHYW/The+Bear+season+2.jpeg?format=500w" alt="Album 6">
+            <div class="playicon">▶︎   </div>
+            <p class="album-title">The Bear - Disney+</p>
+          </div>
+
+          <div class="album" data-album="7">
+            <img src="https://i.scdn.co/image/ab67616d0000b2735ed264d320b5e685b455825f" alt="Album 7">
+            <div class="playicon">▶︎   </div>
+            <p class="album-title">The Morning Show - Apple TV</p>
+          </div>
+
+          <div class="album" data-album="8">
+            <img src="https://i.scdn.co/image/ab67616d0000b273fa68ef0fcbf9e5459628be25" alt="Album 8">
+            <div class="playicon">▶︎   </div>
+            <p class="album-title">Baby Reindeer - Netflix</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <!-- Tool Tips -->
+  <div class="window-container tooltip" id="tip1">
+    <div class="topbar">tool tip</div>
+    <p>The HTML <input> element is a form control used for user data entry, with attributes like type="text" and type="password" to specify different input types.</p>
+  </div>
+  <div class="window-container tooltip" id="tip2">
+    <div class="topbar">tool tip</div>
+    <p>The HTML <input type="radio"> element allows users to select one option from a group of predefined choices.</p>
+  </div>
+  <div class="window-container tooltip" id="tip3">
+    <div class="topbar">tool tip</div>
+    <p>The HTML <input type="date"> allows users to select a date, while <input type="time"> allows users to select a time.</p>
+  </div>
+  <div class="window-container tooltip" id="tip4">
+    <div class="topbar">tool tip</div>
+    <p>The CSS <span>filter</span> property applies visual effects like blur, brightness, or grayscale to elements, altering their appearance.</p>
+  </div>
+
+  <!-- Easter egg -->
+  <div class="egg">👻</div>
+</body>
+
+
+
+
+  <script>
+    // 確保每個表單都可以拖動
+    const dragElements = document.querySelectorAll(".window-container");
+
+    dragElements.forEach((element) => {
+      let isDragging = false;
+      let offsetX = 0, offsetY = 0;
+      let initialX, initialY;
+
+      // 拖曳開始，綁定到 window-container
+      element.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        initialX = e.clientX - offsetX;
+        initialY = e.clientY - offsetY;
+        element.style.cursor = "move";
+      });
+
+      // 拖曳中，當滑鼠移動時更新位置
+      document.addEventListener("mousemove", (e) => {
+        if (isDragging) {
+          offsetX = e.clientX - initialX;
+          offsetY = e.clientY - initialY;
+          element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        }
+      });
+
+      // 停止拖曳，取消游標樣式
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+        element.style.cursor = "default";
+      });
+    });
+
+    // 影集圖片顯示
+    // Select all album elements
+    const albums = document.querySelectorAll('.album');
+    const currentAlbumImage = document.getElementById('current-album');
+
+    // Add click event listener to each album
+    albums.forEach(album => {
+      album.addEventListener('click', () => {
+        // Get the clicked album image source
+        const albumSrc = album.querySelector('img').src;
+        currentAlbumImage.src = albumSrc; // Update the main album image
+
+    // Remove the 'clicked' class from all album titles
+    document.querySelectorAll('.album-title').forEach(title => title.classList.remove('clicked'));
+
+    // Get the title of the clicked album and add the 'clicked' class to it
+    const albumTitle = album.querySelector('.album-title');
+    albumTitle.classList.add('clicked');
+      });
+    });
+
+    // Playicon 功能
+    albums.forEach(album => {
+      album.addEventListener('click', () => {
+        // Get the clicked album image source
+        const albumSrc = album.querySelector('img').src;
+        currentAlbumImage.src = albumSrc; // Update the main album image
+
+    // Remove the 'clicked' class from all album titles
+    document.querySelectorAll('.playicon').forEach(title => title.classList.remove('clicked'));
+
+    // Get the title of the clicked album and add the 'clicked' class to it
+    const albumTitle = album.querySelector('.playicon');
+    albumTitle.classList.add('clicked');
+      });
+    });
+
+    // 視窗置前
+    const windowContainers = document.querySelectorAll('.window-container');
+
+    // 遍歷所有 .window-container 元素
+    windowContainers.forEach(container => {
+      // 點擊時設置 z-index 為 9999，並移除其他元素的 z-index
+      container.addEventListener('click', () => {
+        // 移除所有 .window-container 的 z-index
+        windowContainers.forEach(win => win.style.zIndex = 'auto');
+        // 為當前被點擊的 .window-container 設置 z-index
+        container.style.zIndex = '9999';
+      });
+
+      // 設定拖曳時，拖曳的元素會有更高的層級
+      container.addEventListener('mousedown', () => {
+        // 移除所有 .window-container 的 z-index
+        windowContainers.forEach(win => win.style.zIndex = 'auto');
+        // 為當前拖曳的 .window-container 設置 z-index
+        container.style.zIndex = '9999';
+      });
+    });
+
+    // 彩蛋加入音效
+    // 選取 .egg 元素
+    const eggDiv = document.querySelector('.egg');
+
+    // 創建音效
+    const audio = new Audio('./sound/Mess Call.m4a'); // 替換成你的音效檔案路徑
+
+    // 點擊事件
+    eggDiv.addEventListener('click', function () {
+      // 播放音效
+      audio.play();
+
+      // 加入放大並消失的效果
+      this.classList.add('expand');
+      
+      // 動畫結束後將元素隱藏
+      setTimeout(() => {
+        this.style.display = 'none';
+      }, 1500); // 設置延遲，確保動畫完成後才隱藏
+    });
+
+    // // 彩蛋(no sound)
+    // // 選取 .egg 元素
+    // const eggDiv = document.querySelector('.egg');
+
+    // // 點擊事件
+    // eggDiv.addEventListener('click', function () {
+    //   // 加入放大並消失的效果
+    //   this.classList.add('expand');
+      
+    //   // 動畫結束後將元素隱藏
+    //   setTimeout(() => {
+    //     this.style.display = 'none';
+    //   }, 1500); // 設置延遲，確保動畫完成後才隱藏
+    // });
+
+  </script>
+</body>
+</html>

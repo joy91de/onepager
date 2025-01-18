@@ -1,8 +1,17 @@
 @import url('https://fonts.cdnfonts.com/css/chicago-2');
 
+@font-face {
+  font-family: 'Kanit-Italic';  /* 自訂字體名稱 */
+  src: url('./fonts/Kanit-Italic.ttf') format('truetype'); /* 字體檔案路徑 */
+  font-weight: normal;
+  font-style: normal;
+}
+
 /**{border: 1px solid #000 !important;}*/
 
 body {
+  margin-top: 0;
+  margin-left: 0;
   display: grid;
   padding: 50px;
   width: 100vw;
@@ -66,7 +75,81 @@ body {
     ),
     #fff;
     --windowShadow: 0 0 0 1px #000, 2px 2px 0 #000;
+    position: relative;
     }
+
+nav{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hamberger{
+  z-index: 999999;
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 2%;
+  padding-top: 2%;
+  transition: 0.2s ease-in-out;
+  cursor: var(--pointer);
+}
+
+.hamberger:hover{
+  color: #000;
+/*  cursor: var(--pointer);*/
+}
+
+.hamberger:hover + .dropdown{
+  transform: translateX(0%);
+}
+
+.dropdown{
+  font-family: 'Kanit-Italic';
+  transform: translateX(-100%);
+/*  visibility: hidden;*/
+  transition: 0.2s ease-in;
+  z-index: 99999;
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #dfdfdf;
+  border: 2px solid black;
+  border-left: none;
+}
+
+.dropdown:hover{
+  transform: translateX(0%);
+}
+
+.dropdown .h3{
+  padding: 30% 12% 0 12%;
+  text-align: left;
+  font-size: 30px;
+}
+
+.dropdown .text{
+  padding: 0 12% 10% 12%;
+  text-align: left;
+}
+
+.dropdown span{
+  background-color: #000;
+  padding: 0 5px 0 5px;
+  color: #fff;
+}
+
+.text .year{
+  font-size: 12px;
+  background-color: transparent;
+  padding: 0 0 0 2px;
+  color: #000;
+}
 
 .window-container {
   background: var(--windowBg);
@@ -74,10 +157,12 @@ body {
   border-radius: 5px;
   padding: 20px;
   max-width: 400px;
+  min-width: 200px;
   width: 100%;
   display: grid;
   place-content: center;
   position: relative;
+  z-index: 10;
 }
 
 .topbar{
@@ -184,6 +269,7 @@ button:hover {
   justify-content: center;
   align-items: center;
 }
+
 .mood-flex, .ratiobtn-wrap{
   display: flex;
   flex-direction: row;
@@ -206,6 +292,10 @@ button:hover {
 .mood-label label{
   padding: 5%;
   font-size: 12px;
+  cursor: pointer;
+}
+.mood-label input{
+   cursor: pointer;
 }
 .chartbox, .mood-label, .mood-image{
   width: 100%;
@@ -213,6 +303,9 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.chartbox button{
+  width: 40%;
 }
 
 
@@ -267,11 +360,22 @@ button:hover {
   height: 100%;
 }
 
+.album{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.playicon{
+  font-size: 12px;
+  opacity: 0;
+  padding-left: 12px;
+}
 
 .album p{
   margin: 0;
   font-size: 12px;
-  padding-left: 20px;
+  padding-left: 6px;
   color: #a6a6a6;
 }
 
@@ -285,37 +389,112 @@ button:hover {
   color: #000; /* Set the color to red when clicked */
 }
 
+.playicon.clicked {
+  opacity: 1; /* 當 album-title 被選中時顯示 playicon */
+}
 
-/* 視窗定位 */
 
+/* 視窗定位 + hover tips */
+.tooltip{
+  visibility: hidden;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #000;
+  position: absolute;
+  top: 4%;
+  right: 2%;
+}
+.tooltip p{
+  margin: 0;
+  padding: 20px 0px 0px 0px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/*初始視窗*/
 #draggable0{
-  z-index: 9999999;
+  z-index: 999;
   place-items: center
 }
 
+/*Login 視窗*/
 #draggable1{
   position: absolute;
   bottom: 51%;
   right: 52%;
   width: 20%;
 }
+#draggable1:hover ~ #tip1{
+  visibility: visible;
+}
 
+/*心情視窗*/
 #draggable2{
   position: absolute;
   bottom: 51%;
   left: 51%;
 }
+#draggable2:hover ~ #tip2{
+  visibility: visible;
+}
 
+/*Numbers視窗*/
 #draggable3{
   position: absolute;
   top: 53%;
   left: 51%;
 }
+#draggable3:hover ~ #tip3{
+  visibility: visible;
+}
 
+/*影集視窗*/
 #draggable4{
   position: absolute;
   top: 53%;
   right: 52%;
 }
+#draggable4:hover ~ #tip4{
+  visibility: visible;
+}
 
+/*Tooltip視窗*/
+#draggable5{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.tooltip span{
+  background-color: #000;
+  padding: 0 5px 0 5px;
+  color: #fff;
+}
+
+/*Easter egg*/
+.egg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 1s ease, opacity 3s ease;
+  position: absolute;
+  bottom: 30%;
+  left: 22%;
+  z-index: 1;
+  pointer-events: auto;
+  opacity: 0.5;
+}
+.egg.expand {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 600px;
+  width: 100vw;
+  height: 100vh;
+  transform: scale(1);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 1s ease;
+  z-index: 999999;
+}
 
