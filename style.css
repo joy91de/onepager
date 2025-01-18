@@ -509,7 +509,7 @@ button:hover {
 
 /*-------------------media queries---------------------*/
 
-@media (max-width: 576px) {
+/*@media (max-width: 576px) {
   body {
     font-size: 12px;
     background-color: lightgreen;
@@ -529,3 +529,4 @@ button:hover {
     background-color: lightgoldenrodyellow;
   }
 }
+*/
