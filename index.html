@@ -265,51 +265,6 @@
       });
     });
 
-    // 平板拖曳功能
-    // 確保每個表單都可以拖動
-    const dragElements = document.querySelectorAll(".window-container");
-
-    dragElements.forEach((element) => {
-      let isDragging = false;
-      let offsetX = 0, offsetY = 0;
-      let initialX, initialY;
-
-      // 拖曳開始，綁定到 window-container
-      function onDragStart(e) {
-        isDragging = true;
-        initialX = e.type === "mousedown" ? e.clientX - offsetX : e.touches[0].clientX - offsetX;
-        initialY = e.type === "mousedown" ? e.clientY - offsetY : e.touches[0].clientY - offsetY;
-        element.style.cursor = "move";
-      }
-
-      // 拖曳中，當滑鼠或觸控移動時更新位置
-      function onDragMove(e) {
-        if (isDragging) {
-          const clientX = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
-          const clientY = e.type === "mousemove" ? e.clientY : e.touches[0].clientY;
-          offsetX = clientX - initialX;
-          offsetY = clientY - initialY;
-          element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-        }
-      }
-
-      // 停止拖曳，取消游標樣式
-      function onDragEnd() {
-        isDragging = false;
-        element.style.cursor = "default";
-      }
-
-      // 綁定滑鼠事件
-      element.addEventListener("mousedown", onDragStart);
-      document.addEventListener("mousemove", onDragMove);
-      document.addEventListener("mouseup", onDragEnd);
-
-      // 綁定觸控事件
-      element.addEventListener("touchstart", onDragStart);
-      document.addEventListener("touchmove", onDragMove);
-      document.addEventListener("touchend", onDragEnd);
-    });
-
 
     // 彩蛋加入音效
     // 選取 .egg 元素
@@ -332,9 +287,13 @@
       }, 1500); // 設置延遲，確保動畫完成後才隱藏
     });
 
-    // Clock
+
     function updateTime() {
       const timeContainer = document.getElementById('time');
+      if (!timeContainer) {
+        console.error("Clock container not found!");
+        return;
+      }
       const now = new Date();
       const hours = now.getHours().toString().padStart(2, '0');
       const minutes = now.getMinutes().toString().padStart(2, '0');
@@ -342,13 +301,63 @@
       timeContainer.textContent = `${hours}:${minutes}:${seconds}`;
     }
 
+    // 定時更新時鐘
     setInterval(updateTime, 1000);
-    updateTime();
+    updateTime(); // 初始化
+
+
+
+    // // Clock(正常運作)
+    // function updateTime() {
+    //   const timeContainer = document.getElementById('time');
+    //   const now = new Date();
+    //   const hours = now.getHours().toString().padStart(2, '0');
+    //   const minutes = now.getMinutes().toString().padStart(2, '0');
+    //   const seconds = now.getSeconds().toString().padStart(2, '0');
+    //   timeContainer.textContent = `${hours}:${minutes}:${seconds}`;
+    // }
+
+    // setInterval(updateTime, 1000);
+    // updateTime();
 
 
 // Code Backup
     
-    // // 確保每個表單都可以拖動 (only滑鼠)
+    // 確保每個表單都可以拖動 (only滑鼠)
+    const dragElements = document.querySelectorAll(".window-container");
+
+    dragElements.forEach((element) => {
+      let isDragging = false;
+      let offsetX = 0, offsetY = 0;
+      let initialX, initialY;
+
+      // 拖曳開始，綁定到 window-container
+      element.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        initialX = e.clientX - offsetX;
+        initialY = e.clientY - offsetY;
+        element.style.cursor = "move";
+      });
+
+      // 拖曳中，當滑鼠移動時更新位置
+      document.addEventListener("mousemove", (e) => {
+        if (isDragging) {
+          offsetX = e.clientX - initialX;
+          offsetY = e.clientY - initialY;
+          element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        }
+      });
+
+      // 停止拖曳，取消游標樣式
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+        element.style.cursor = "default";
+      });
+    });
+
+
+    // // 平板拖曳功能
+    // // 確保每個表單都可以拖動
     // const dragElements = document.querySelectorAll(".window-container");
 
     // dragElements.forEach((element) => {
@@ -357,27 +366,39 @@
     //   let initialX, initialY;
 
     //   // 拖曳開始，綁定到 window-container
-    //   element.addEventListener("mousedown", (e) => {
+    //   function onDragStart(e) {
     //     isDragging = true;
-    //     initialX = e.clientX - offsetX;
-    //     initialY = e.clientY - offsetY;
+    //     initialX = e.type === "mousedown" ? e.clientX - offsetX : e.touches[0].clientX - offsetX;
+    //     initialY = e.type === "mousedown" ? e.clientY - offsetY : e.touches[0].clientY - offsetY;
     //     element.style.cursor = "move";
-    //   });
+    //   }
 
-    //   // 拖曳中，當滑鼠移動時更新位置
-    //   document.addEventListener("mousemove", (e) => {
+    //   // 拖曳中，當滑鼠或觸控移動時更新位置
+    //   function onDragMove(e) {
     //     if (isDragging) {
-    //       offsetX = e.clientX - initialX;
-    //       offsetY = e.clientY - initialY;
+    //       const clientX = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
+    //       const clientY = e.type === "mousemove" ? e.clientY : e.touches[0].clientY;
+    //       offsetX = clientX - initialX;
+    //       offsetY = clientY - initialY;
     //       element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
     //     }
-    //   });
+    //   }
 
     //   // 停止拖曳，取消游標樣式
-    //   document.addEventListener("mouseup", () => {
+    //   function onDragEnd() {
     //     isDragging = false;
     //     element.style.cursor = "default";
-    //   });
+    //   }
+
+    //   // 綁定滑鼠事件
+    //   element.addEventListener("mousedown", onDragStart);
+    //   document.addEventListener("mousemove", onDragMove);
+    //   document.addEventListener("mouseup", onDragEnd);
+
+    //   // 綁定觸控事件
+    //   element.addEventListener("touchstart", onDragStart);
+    //   document.addEventListener("touchmove", onDragMove);
+    //   document.addEventListener("touchend", onDragEnd);
     // });
 
 

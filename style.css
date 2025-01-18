@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Jersey+15&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
 
-*{border: 1px solid #000 !important;}
+/**{border: 1px solid #000 !important;}*/
 
 body {
   font-display: swap;
@@ -99,7 +99,7 @@ nav{
   z-index: 999999;
   color: #FCF9F9;
   font-size: 50px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 2%;
   padding-top: 3%;
@@ -474,13 +474,6 @@ button:hover {
   visibility: visible;
 }
 
-/*Tooltip視窗*/
-#draggable5{
-  position: absolute;
-  top: 5%;
-  right: 5%;
-}
-
 
 /*-------------------Easter egg---------------------*/
 .egg{
@@ -516,10 +509,14 @@ button:hover {
     background: #aaa;
     height: 100%;
     overflow: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
+    position: relative;
   }
+
   .hamberger{
     left: 3%;
     color: #ccc;
@@ -533,9 +530,6 @@ button:hover {
     top: 0;
     margin: 0;
   }
-  .tooltip{
-    width: 80%;
-  }
   .topbar{
     display: none;
   }
@@ -546,39 +540,19 @@ button:hover {
     margin: 10px 0;
   }
 
-  /*初始視窗*/
-  #draggable0{
-    z-index: 999;
-    position: initial;
-  }
-
-  /*Login 視窗*/
-  #draggable1{
-    position: initial;
-  }
-
-  /*心情視窗*/
-  #draggable2{
-    position: initial;
-  }
-
-  /*Numbers視窗*/
-  #draggable3{
-    position: initial;
-  }
-
-  /*影集視窗*/
-  #draggable4{
+  /*-- 視窗 position reset --*/
+  #draggable0, #draggable1, #draggable2, #draggable3, #draggable4{
     position: initial;
   }
 
   /*Tooltip視窗*/
-  #draggable5{
+  .tooltip{
+    position: fixed;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     z-index: 9999;
-    position: absolute;
-    top: 5%;
-    right: 50%;
-    transform: translateX(-50%);
+    width: 20%;
   }
 
   /*--- Lieblingsserie ---*/
