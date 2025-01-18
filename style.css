@@ -1,22 +1,11 @@
 @import url('https://fonts.cdnfonts.com/css/chicago-2');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Jersey+15&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
-@font-face {
-  font-family: 'Kanit';  /* 自訂字體名稱 */
-  src: url('./fonts/Kanit-Italic.ttf') format('truetype'); /* 字體檔案路徑 */
-  font-weight: normal;
-  font-style: Italic;
-}
-
-@font-face {
-  font-family: 'Kanit';
-  src: url('./fonts/Kanit-MediumItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: Italic;
-}
 
 /**{border: 1px solid #000 !important;}*/
 
 body {
+  font-display: swap;
   margin-top: 0;
   margin-left: 0;
   display: grid;
@@ -108,7 +97,7 @@ nav{
 
 .hamberger{
   z-index: 999999;
-  color: #fff;
+  color: #FCF9F9;
   font-size: 50px;
   position: absolute;
   top: 0;
@@ -130,6 +119,7 @@ nav{
 .dropdown{
   /*  visibility: hidden;*/
   font-family: 'Kanit';
+  font-style: italic;
   transform: translateX(-100%);
   transition: 0.2s ease-in;
   z-index: 99999;
@@ -154,7 +144,7 @@ nav{
   padding: 40% 12% 8% 12%;
   text-align: left;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .dropdown .text{
@@ -436,9 +426,16 @@ button:hover {
 .tooltip p{
   margin: 0;
   padding: 20px 0px 0px 0px;
-  text-align: center;
+  text-align: left;
   font-size: 12px;
+  line-height: 1.2;
 }
+.tooltip span{
+  background-color: #000;
+  padding: 2px 5px;
+  color: #fff;
+}
+
 
 /*初始視窗*/
 #draggable0{
@@ -494,11 +491,6 @@ button:hover {
   right: 5%;
 }
 
-.tooltip span{
-  background-color: #000;
-  padding: 0 5px 0 5px;
-  color: #fff;
-}
 
 /*Easter egg*/
 .egg{
@@ -531,9 +523,13 @@ button:hover {
 
 @media (max-width: 576px) {
   body {
-    background: #ccc;
+    background: #aaa;
     height: 100%;
     overflow: hidden;
+  }
+  .hamberger{
+    left: 3%;
+    color: #ccc;
   }
   .dropdown{
     width: 70%;
@@ -546,10 +542,14 @@ button:hover {
 
 @media (min-width: 577px) and (max-width: 992px) {
   body {
-    background: #ccc;
+    background: #aaa;
     height: 100% !important; 
     width: 100% !important;
     overflow: hidden;
+  }
+  .hamberger{
+    left: 3%;
+    color: #ccc;
   }
   .dropdown{
     width: 70%;
@@ -562,9 +562,13 @@ button:hover {
 
 @media (max-width: 993px) {
   body {
-    background: #ccc;
+    background: #aaa;
     height: 100%;
     overflow: hidden;
+  }
+  .hamberger{
+    left: 3%;
+    color: #ccc;
   }
   .dropdown{
     width: 70%;
