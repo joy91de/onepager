@@ -25,12 +25,12 @@ body {
     16 16, pointer;
   --pointer: url("data:image/svg+xml,%3Csvg width='15' height='29' viewBox='0 0 90 114' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M42 3V6H45H48V21V36H54H60V39V42H66H72V45V48H78H84V51V54H87H90V69V84H87H84V90V96H81H78V105V114H75H72V105V96H75H78V90V84H81H84V69V54H78H72V51V48H66H60V45V42H51H42V24V6H36H30V36V66H27H24V60V54H21H18V51V48H12H6V51V54H9H12V60V66H15H18V75V84H21H24V90V96H27H30V99V102H33H36V108V114H33H30V108V102H27H24V99V96H21H18V90V84H15H12V75V66H9H6V60V54H3H0V48V42H9H18V45V48H21H24V27V6H27H30V3V0H36H42V3Z' fill='black'/%3E%3Cpath d='M72 114V105V96H75H78V90V84H81H84V69V54H78H72V51V48H66H60V45V42H51H42V24V6H36H30V36V66H27H24V60V54H21H18V51V48H12H6V51V54H9H12V60V66H15H18V75V84H21H24V90V96H27H30V99V102H33H36V108V114H72Z' fill='white'/%3E%3C/svg%3E%0A")
     16 16, pointer;
-  cursor: var(--default);
+/*  cursor: var(--default);*/
   background: linear-gradient(
       to bottom,
       #000 2px,
       #fff 2px,
-      #fff 24px,
+      #fff 28px,
       #000 24px,
       #000 26px,
       transparent 26px
@@ -77,6 +77,14 @@ body {
     --windowShadow: 0 0 0 1px #000, 2px 2px 0 #000;
     position: relative;
     }
+
+.clock{
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+  color: #000;
+  padding: 5px 10px;
+}
 
 nav{
   width: 100%;

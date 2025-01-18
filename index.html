@@ -10,12 +10,13 @@
 </head>
 
 <body>
+  <div class="clock" id="time">⏲</div>
   <nav>
     <div class="hamberger">☺︎</div>
     <div class="dropdown">
       <p class="h3">Hallo!</p>
       <p class="text">
-        This one-pager aims to introduce the HTML <span>input</span> element. In each window's <span>hover</span> state, you can find related introductions to the respective input components.<br/><br/>The webpage uses JavaScript to achieve a drag-and-drop effect, presenting a retro-style window system. Additionally, the JavaScript events are also used to create the "Lieblingsserie" section, where I share my collection of favorite TV shows and recommend them to you. <br/><br/>
+        This one-pager aims to introduce the HTML <span>input</span> element. In each window's <span>hover</span> state, you can find related introductions to the respective input components.<br/><br/>The webpage uses JavaScript to achieve a <span>drag-and-drop</span> effect, presenting a retro-style window system. Additionally, the JavaScript events are also used to create the "Lieblingsserie" section, where I share my collection of favorite TV shows and recommend them to you. <br/><br/>
         BTW, I hid an <span>Easter egg</span> on the website. Enjoy! <br/><br/>
         Joy Tsao ☺︎ <span class="year">2025 in FH;P</span>
       </p>
@@ -98,7 +99,7 @@
   <!-- 第三個視窗 -->
   <div class="window-container" id="draggable3">
     <div class="topbar">dropdown</div>
-    <h1>Numbers</h1>
+    <h1>Date | Time</h1>
     <form class="form">
       <div class="form-group">
         <label for="birthdate"></label>
@@ -122,7 +123,7 @@
     <h1>Lieblingsserie</h1>
     <div class="album-container">
       <div class="album-display">
-        <img id="current-album" src="./img/tv_20250118.jpg" alt="Album Cover">
+        <img id="current-album" src="./img/tv_20250118.jpg" alt="Series Cover">
       </div>
       <div class="album-wrap">
         <div class="album-list">
@@ -317,7 +318,20 @@
       }, 1500); // 設置延遲，確保動畫完成後才隱藏
     });
 
-    // // 彩蛋(no sound)
+    // Clock
+    function updateTime() {
+      const timeContainer = document.getElementById('time');
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      timeContainer.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // // Easter Egg(no sound)
     // // 選取 .egg 元素
     // const eggDiv = document.querySelector('.egg');
 
