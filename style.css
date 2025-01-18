@@ -145,6 +145,8 @@ nav{
 .dropdown .text{
   padding: 0 12% 10% 12%;
   text-align: left;
+  word-wrap: break-word; /* 適用於舊版瀏覽器 */
+  overflow-wrap: break-word; /* 適用於現代瀏覽器 */
 }
 
 .dropdown span{
