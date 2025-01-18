@@ -84,6 +84,7 @@ body {
   font-size: 16px;
   color: #000;
   padding: 5px 10px;
+  z-index: 9999;
 }
 
 nav{
@@ -506,3 +507,25 @@ button:hover {
   z-index: 999999;
 }
 
+/*-------------------media queries---------------------*/
+
+@media (max-width: 576px) {
+  body {
+    font-size: 12px;
+    background-color: lightgreen;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  body {
+    font-size: 14px;
+    background-color: lightcoral;
+  }
+}
+
+@media (min-width: 993px) {
+  body {
+    font-size: 18px;
+    background-color: lightgoldenrodyellow;
+  }
+}
