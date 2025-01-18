@@ -436,6 +436,7 @@ button:hover {
   color: #fff;
 }
 
+/*------------------ Windows --------------------*/
 
 /*初始視窗*/
 #draggable0{
@@ -492,7 +493,7 @@ button:hover {
 }
 
 
-/*Easter egg*/
+/*-------------------Easter egg---------------------*/
 .egg{
   display: flex;
   align-items: center;
@@ -525,7 +526,10 @@ button:hover {
   body {
     background: #aaa;
     height: 100%;
-    overflow: hidden;
+/*    overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .hamberger{
     left: 3%;
@@ -535,17 +539,65 @@ button:hover {
     width: 70%;
   }
   .clock{
+    position: absolute;
     right: 0;
+    top: 0;
     margin: 0;
   }
+  .tooltip{
+    width: 80%;
+  }
+  .topbar{
+    display: none;
+  }
+
+  /*--- Windows Position ---*/
+
+  /*初始視窗*/
+  #draggable0{
+    z-index: 999;
+    position: initial;
+  }
+
+  /*Login 視窗*/
+  #draggable1{
+    position: initial;
+  }
+
+  /*心情視窗*/
+  #draggable2{
+    position: initial;
+  }
+
+  /*Numbers視窗*/
+  #draggable3{
+    position: initial;
+  }
+
+  /*影集視窗*/
+  #draggable4{
+    position: initial;
+  }
+
+  /*Tooltip視窗*/
+  #draggable5{
+    z-index: 9999;
+    position: absolute;
+    top: 5%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
+
 }
 
 @media (min-width: 577px) and (max-width: 992px) {
   body {
     background: #aaa;
-    height: 100% !important; 
-    width: 100% !important;
-    overflow: hidden;
+    height: 100%;
+/*    overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .hamberger{
     left: 3%;
@@ -555,8 +607,53 @@ button:hover {
     width: 70%;
   }
   .clock{
+    position: absolute;
     right: 0;
+    top: 0;
     margin: 0;
+  }
+  .tooltip{
+    width: 80%;
+  }
+  .topbar{
+    display: none;
+  }
+
+  /*--- Windows Position ---*/
+
+  /*初始視窗*/
+  #draggable0{
+    z-index: 999;
+    position: initial;
+  }
+
+  /*Login 視窗*/
+  #draggable1{
+    position: initial;
+  }
+
+  /*心情視窗*/
+  #draggable2{
+    position: initial;
+  }
+
+  /*Numbers視窗*/
+  #draggable3{
+    position: initial;
+  }
+
+  /*影集視窗*/
+  #draggable4{
+    position: initial;
+  }
+
+  /*Tooltip視窗*/
+  #draggable5{
+    z-index: 9999;
+    position: absolute;
+    top: 5%;
+    right: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -564,7 +661,10 @@ button:hover {
   body {
     background: #aaa;
     height: 100%;
-    overflow: hidden;
+/*    overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .hamberger{
     left: 3%;
@@ -574,7 +674,53 @@ button:hover {
     width: 70%;
   }
   .clock{
+    position: absolute;
     right: 0;
+    top: 0;
     margin: 0;
   }
+  .tooltip{
+    width: 80%;
+  }
+  .topbar{
+    display: none;
+  }
+
+  /*--- Windows Position ---*/
+
+  /*初始視窗*/
+  #draggable0{
+    z-index: 999;
+    position: initial;
+  }
+
+  /*Login 視窗*/
+  #draggable1{
+    position: initial;
+  }
+
+  /*心情視窗*/
+  #draggable2{
+    position: initial;
+  }
+
+  /*Numbers視窗*/
+  #draggable3{
+    position: initial;
+  }
+
+  /*影集視窗*/
+  #draggable4{
+    position: initial;
+  }
+
+  /*Tooltip視窗*/
+  #draggable5{
+    z-index: 9999;
+    position: absolute;
+    top: 5%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
+
 }
