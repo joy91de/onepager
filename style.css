@@ -559,6 +559,9 @@ button:hover {
     width: 100%;
     padding: 2%;
   }
+  .dropdown .text{
+    font-size: 12pt;
+  }
 
   .clock{
     position: absolute;
