@@ -12,14 +12,15 @@
 <body>
   <div class="clock" id="time"></div>
   <nav>
-    <div class="hamberger">☺︎</div>
+    <div class="hamberger">☺︎<p class="h3">Hallo!</p></div>
     <div class="dropdown">
-      <p class="h3">Hallo!</p>
-      <p class="text">
-        This one-pager aims to introduce the HTML <span>input</span> element. In each window's <span>hover</span> state, you can find related introductions to the respective input components.<br/><br/>The webpage uses JavaScript to achieve a <span>drag-and-drop</span> effect, presenting a retro-style window system. Additionally, the JavaScript events are also used to create the "Lieblingsserie" section, where I share my collection of favorite TV shows and recommend them to you. <br/><br/>
-        BTW, I hid an <span>Easter egg</span> on the website. Enjoy! <br/><br/>
-        Joy Tsao ☺︎ <span class="year">2025 in FH;P</span>
-      </p>
+      <div class="dropdown-wrap">
+        <p class="text">
+          This one-pager aims to introduce the HTML <span>input</span> element. In each window's <span>hover</span> state, you can find related introductions to the respective input components.<br/><br/>The webpage uses JavaScript to achieve a <span>drag-and-drop</span> effect, presenting a retro-style window system. Additionally, the JavaScript events are also used to create the "Lieblingsserie" section, where I share my collection of favorite TV shows and recommend them to you. <br/><br/>
+          BTW, I hid an <span>Easter egg</span> on the website. Enjoy! <br/><br/>
+          Joy Tsao ☺︎ <span class="year">2025 in FH;P</span>
+        </p>
+      </div>
     </div>
   </nav>
   <!-- 初始視窗 -->
@@ -266,6 +267,39 @@
     });
 
 
+    // 確保每個表單都可以拖動 (only滑鼠)
+    const dragElements = document.querySelectorAll(".window-container");
+
+    dragElements.forEach((element) => {
+      let isDragging = false;
+      let offsetX = 0, offsetY = 0;
+      let initialX, initialY;
+
+      // 拖曳開始，綁定到 window-container
+      element.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        initialX = e.clientX - offsetX;
+        initialY = e.clientY - offsetY;
+        element.style.cursor = "move";
+      });
+
+      // 拖曳中，當滑鼠移動時更新位置
+      document.addEventListener("mousemove", (e) => {
+        if (isDragging) {
+          offsetX = e.clientX - initialX;
+          offsetY = e.clientY - initialY;
+          element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        }
+      });
+
+      // 停止拖曳，取消游標樣式
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+        element.style.cursor = "default";
+      });
+    });
+
+
     // 彩蛋加入音效
     // 選取 .egg 元素
     const eggDiv = document.querySelector('.egg');
@@ -307,6 +341,11 @@
 
 
 
+
+
+
+// Code Backup
+    
     // // Clock(正常運作)
     // function updateTime() {
     //   const timeContainer = document.getElementById('time');
@@ -319,41 +358,6 @@
 
     // setInterval(updateTime, 1000);
     // updateTime();
-
-
-// Code Backup
-    
-    // 確保每個表單都可以拖動 (only滑鼠)
-    const dragElements = document.querySelectorAll(".window-container");
-
-    dragElements.forEach((element) => {
-      let isDragging = false;
-      let offsetX = 0, offsetY = 0;
-      let initialX, initialY;
-
-      // 拖曳開始，綁定到 window-container
-      element.addEventListener("mousedown", (e) => {
-        isDragging = true;
-        initialX = e.clientX - offsetX;
-        initialY = e.clientY - offsetY;
-        element.style.cursor = "move";
-      });
-
-      // 拖曳中，當滑鼠移動時更新位置
-      document.addEventListener("mousemove", (e) => {
-        if (isDragging) {
-          offsetX = e.clientX - initialX;
-          offsetY = e.clientY - initialY;
-          element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-        }
-      });
-
-      // 停止拖曳，取消游標樣式
-      document.addEventListener("mouseup", () => {
-        isDragging = false;
-        element.style.cursor = "default";
-      });
-    });
 
 
     // // 平板拖曳功能
