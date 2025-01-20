@@ -608,7 +608,7 @@ button:hover {
   }
 }
 
-/*-- s-phone-horizontal --*/
+/*-- phone-horizontal --*/
 @media (min-width: 577px) and (max-width: 768px) {
     body {
     background: #aaa;
@@ -700,7 +700,7 @@ button:hover {
   }
 }
 
-/*-- s-phone --*/
+/*-- L-screen --*/
 @media (min-width: 768px) and (max-width: 992px) {
   body {
     background: #aaa;
