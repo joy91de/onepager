@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Jersey+15&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
 
-/**{border: 1px solid #000 !important;}*/
+/* *{border: 1px solid #000 !important;} */
 
 body {
   font-display: swap;
@@ -38,9 +38,10 @@ body {
     2px 2px;
   --lightBg: radial-gradient(circle at center, #ccc 0.5px, #fff 0.5px, #fff 2px)
     0 0 / 2px 2px;
-  --windowBg: linear-gradient(to right, #fff, #fff) 6.5px 7px / 9px 9px
-      no-repeat,
-    linear-gradient(to right, #000, #000) 5.5px 6px / 11px 11px no-repeat,
+  --windowBg:
+    /* 左邊的視窗關閉框*/
+    /* linear-gradient(to right, #fff, #fff) 6.5px 7px / 9px 9px no-repeat,*/
+    /* linear-gradient(to right, #000, #000) 5.5px 6px / 11px 11px no-repeat,*/
     linear-gradient(
       to bottom,
       transparent 21px,
@@ -73,6 +74,29 @@ body {
     #fff;
     --windowShadow: 0 0 0 1px #000, 2px 2px 0 #000;
     position: relative;
+
+    --windowTooltip:
+    linear-gradient(
+      to bottom,
+      #000 3px,
+      #000 3px
+    ),
+    linear-gradient(
+      to right,
+      #fff 2px,
+      transparent 2px,
+      transparent calc(100% - 2px),
+      #fff calc(100% - 2px)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #222 1px,
+      #fff 1px,
+      #fff 2px,
+      #222 2px,
+      #222 3px
+    ),
+    #fff;
     }
 
 .clock{
@@ -190,6 +214,20 @@ nav{
 
 .window-container {
   background: var(--windowBg);
+  box-shadow: var(--windowShadow);
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 400px;
+  min-width: 200px;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.window-tooltip{
+  background: var(--windowTooltip);
   box-shadow: var(--windowShadow);
   border-radius: 5px;
   padding: 20px;
@@ -426,22 +464,22 @@ button:hover {
   visibility: hidden;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
-  color: #000;
+  color: #fff;
   position: absolute;
   top: 4%;
   right: 2%;
 }
 .tooltip p{
   margin: 0;
-  padding: 20px 0px 0px 0px;
-  text-align: left;
+  /* padding: 20px 0px 0px 0px; */
+  text-align: center;
   font-size: 12px;
   line-height: 1.2;
 }
 .tooltip span{
-  background-color: #000;
-  padding: 2px 5px;
-  color: #fff;
+  background-color: yellow;
+  padding: 0 5px;
+  color: #000;
 }
 
 /*------------------ Windows --------------------*/
@@ -519,6 +557,25 @@ button:hover {
   opacity: 0;
   transition: transform 0.5s ease, opacity 1s ease;
   z-index: 999999;
+}
+
+/*-------------------  copyright  ---------------------*/
+
+.copyright{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  text-align: right;
+  font-family: 'Kanit';
+  font-style: italic;
+  font-size: 15px;
+  opacity: 0;
+  color: #000;
+  padding: 1px 10px;
+}
+.copyright:hover{
+  opacity: 1;
+  background-color: #dfdfdf;
 }
 
 /*-------------------media queries---------------------*/

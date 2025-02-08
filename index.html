@@ -16,13 +16,14 @@
     <div class="dropdown">
       <div class="dropdown-wrap">
         <p class="text">
-          This one-pager aims to introduce the HTML <span>input</span> element. In each window's <span>hover</span> state, you can find related introductions to the respective input components. It is also <span>responsive</span> across four scales.<br/><br/>The webpage uses JavaScript to achieve a <span>drag-and-drop</span> effect, presenting a retro-style window system. Additionally, the JavaScript events are also used to create the "Lieblingsserie" section, where I share my collection of favorite TV shows and recommend them to you. <br/><br/>
+          This one-pager aims to introduce the HTML <span>input</span> element. In each window's <span>hover</span> state, you can find related introductions to the respective input components. It is also <span>responsive</span> across four scales.<br/><br/>The webpage uses JavaScript to achieve a <span>drag-and-drop</span> effect, presenting a retro-style window system. Additionally, the JavaScript events are also used to create the "Favorite Series" section, where I share my collection of favorite TV shows and recommend them to you. <br/><br/>
           BTW, I hid an <span>Easter egg</span> on the website. Enjoy! <br/><br/>
           Joy Tsao ☺︎ <span class="year">2025 in FH;P</span>
         </p>
       </div>
     </div>
   </nav>
+  
   <!-- 初始視窗 -->
   <div class="window-container notice" id="draggable0">
     <div class="topbar">Notice</div>
@@ -36,16 +37,16 @@
     <h1>Login</h1>
     <form class="form">
       <div class="form-group">
-        <input type="text" id="name" required>
         <label for="name">Name</label>
+        <input type="text" id="name" required>
       </div>
       <div class="form-group">
-        <input type="email" id="email" required>
         <label for="email">Email</label>
+        <input type="email" id="email" pattern="[a-z0-9._%+-]+@example\.com" required>
       </div>
       <div class="form-group">
-        <input type="password" id="password" required>
         <label for="password">Password</label>
+        <input type="password" id="password" required>
       </div>
       <button type="submit">Enter</button>
     </form>
@@ -61,35 +62,35 @@
           <img src="img/moodchart-5.png" alt="super">
           <div class="mood-label">
             <label for="super">super</label>
-            <input type="radio" class="radio" id="super" name="moodlevel" value="5" checked />
+            <input type="radio" class="radio" id="super" name="moodlevel" value="5" checked/>
           </div>
         </div>
         <div class="mood-image">
           <img src="img/moodchart-4.png" alt="gut">
           <div class="mood-label">
             <label for="gut">gut</label>
-            <input type="radio" class="radio" id="gut" name="moodlevel" value="4" />
+            <input type="radio" class="radio" id="gut" name="moodlevel" value="4"/>
           </div>
         </div>
         <div class="mood-image">
           <img src="img/moodchart-3.png" alt="normal">
           <div class="mood-label">
             <label for="normal">normal</label>
-            <input type="radio" class="radio" id="normal" name="moodlevel" value="3" />
+            <input type="radio" class="radio" id="normal" name="moodlevel" value="3"/>
           </div>
         </div>
         <div class="mood-image">
           <img src="img/moodchart-2.png" alt="nein">
           <div class="mood-label">
             <label for="nein">naja</label>
-            <input type="radio" class="radio" id="nein" name="moodlevel" value="2" />
+            <input type="radio" class="radio" id="nein" name="moodlevel" value="2"/>
           </div>
         </div>
         <div class="mood-image">
           <img src="img/moodchart-1.png" alt="schlecht">
           <div class="mood-label">
             <label for="schlecht">schlecht</label>
-            <input type="radio" class="radio" id="schlecht" name="moodlevel" value="1" />
+            <input type="radio" class="radio" id="schlecht" name="moodlevel" value="1"/>
           </div>
         </div>
       </div>
@@ -107,7 +108,7 @@
         <input type="date" id="birthdate" name="birthdate">
       </div>
       <div class="form-group">
-       <label for="appointment"></label>
+        <label for="appointment"></label>
         <input type="time" id="appointment" name="appointment">
       </div>
       <div class="form-group">
@@ -121,7 +122,7 @@
   <!-- 第四個視窗 -->
   <div class="window-container" id="draggable4">
     <div class="topbar">filter</div>
-    <h1>Lieblingsserie</h1>
+    <h1>Favorite Series</h1>
     <div class="album-container">
       <div class="album-display">
         <img id="current-album" src="./img/tv_20250118.jpg" alt="Series Cover">
@@ -181,33 +182,142 @@
     </div>
   </div> 
 
-  <!-- Tool Tips -->
-  <div class="window-container tooltip" id="tip1">
-    <div class="topbar">tool tip</div>
-    <p>The HTML <input> element is a form control used for user data entry, with attributes like type="text" and type="password" to specify different input types.</p>
+  <!-- ToolTips -->
+  <div class="window-tooltip tooltip" id="tip1">
+    <div class="topbar"></div>
+    <p>The HTML <span>input</span> element is a form control used for user data entry, with attributes like <span>type="text"</span> and <span>type="password"</span> to specify different input types.</p>
   </div>
-  <div class="window-container tooltip" id="tip2">
-    <div class="topbar">tool tip</div>
-    <p>The HTML <input type="radio"> element allows users to select one option from a group of predefined choices.</p>
+  <div class="window-tooltip tooltip" id="tip2">
+    <div class="topbar"></div>
+    <p>The HTML <span>radio</span> element allows users to select one option from a group of predefined choices.</p>
   </div>
-  <div class="window-container tooltip" id="tip3">
-    <div class="topbar">tool tip</div>
-    <p>The HTML <input type="date"> allows users to select a date, while <input type="time"> allows users to select a time.</p>
+  <div class="window-tooltip tooltip" id="tip3">
+    <div class="topbar"></div>
+    <p>The HTML <span>date</span> allows users to select a date, while <span>time</span> allows users to select a time.</p>
   </div>
-  <div class="window-container tooltip" id="tip4">
-    <div class="topbar">tool tip</div>
+  <div class="window-tooltip tooltip" id="tip4">
+    <div class="topbar"></div>
     <p>The CSS <span>filter</span> property applies visual effects like blur, brightness, or grayscale to elements, altering their appearance.</p>
   </div>
 
   <!-- Easter egg -->
   <div class="egg">👻</div>
+
+  <!-- copyright -->
+   <div class="copyright">
+    Winter term 2024/25 in the Interactive Information course of the Interface Design program at FH;P. | For educational purposes only
+   </div>
 </body>
+<script>
+  // 影集圖片顯示
+  const albums = document.querySelectorAll('.album');
+  const currentAlbumImage = document.getElementById('current-album');
+
+  albums.forEach(album => {
+      album.addEventListener('click', () => {
+          const albumSrc = album.querySelector('img').src;
+          currentAlbumImage.src = albumSrc;
+
+          document.querySelectorAll('.album-title').forEach(title => title.classList.remove('clicked'));
+          const albumTitle = album.querySelector('.album-title');
+          albumTitle.classList.add('clicked');
+      });
+  });
+
+  // Playicon 功能
+  albums.forEach(album => {
+      album.addEventListener('click', () => {
+          const albumSrc = album.querySelector('img').src;
+          currentAlbumImage.src = albumSrc;
+
+          document.querySelectorAll('.playicon').forEach(title => title.classList.remove('clicked'));
+          const albumTitle = album.querySelector('.playicon');
+          albumTitle.classList.add('clicked');
+      });
+  });
+
+  // 視窗置前
+  const windowContainers = document.querySelectorAll('.window-container');
+
+  windowContainers.forEach(container => {
+      container.addEventListener('click', () => {
+          windowContainers.forEach(win => win.style.zIndex = 'auto');
+          container.style.zIndex = '9999';
+      });
+
+      container.addEventListener('mousedown', () => {
+          windowContainers.forEach(win => win.style.zIndex = 'auto');
+          container.style.zIndex = '9999';
+      });
+  });
+
+  // 確保每個表單都可以拖動 (only滑鼠)
+  const dragElements = document.querySelectorAll(".window-container");
+
+  dragElements.forEach((element) => {
+      let isDragging = false;
+      let offsetX = 0, offsetY = 0;
+      let initialX, initialY;
+
+      element.addEventListener("mousedown", (e) => {
+          isDragging = true;
+          initialX = e.clientX - offsetX;
+          initialY = e.clientY - offsetY;
+          element.style.cursor = "move";
+      });
+
+      document.addEventListener("mousemove", (e) => {
+          if (isDragging) {
+              offsetX = e.clientX - initialX;
+              offsetY = e.clientY - initialY;
+              element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+          }
+      });
+
+      document.addEventListener("mouseup", () => {
+          isDragging = false;
+          element.style.cursor = "default";
+      });
+  });
+
+  // 彩蛋加入音效
+  const eggDiv = document.querySelector('.egg');
+  const audio = new Audio('./sound/Mess Call.m4a');
+
+  eggDiv.addEventListener('click', function () {
+      audio.play();
+      this.classList.add('expand');
+
+      setTimeout(() => {
+          this.style.display = 'none';
+      }, 1500);
+  });
+
+  function updateTime() {
+      const timeContainer = document.getElementById('time');
+      if (!timeContainer) {
+          console.error("Clock container not found!");
+          return;
+      }
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      timeContainer.textContent = `${hours}:${minutes}:${seconds}`;
+  }
+
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
+</html>
 
 
 
 
-  <script>
-    // 影集圖片顯示
+
+
+<!-- <script>
+        // 影集圖片顯示
     // Select all album elements
     const albums = document.querySelectorAll('.album');
     const currentAlbumImage = document.getElementById('current-album');
@@ -340,11 +450,7 @@
     updateTime(); // 初始化
 
 
-
-
-
-
-// Code Backup
+    // Code Backup
     
     // // Clock(正常運作)
     // function updateTime() {
@@ -421,7 +527,4 @@
     //   }, 1500); // 設置延遲，確保動畫完成後才隱藏
     // });
 
-
-  </script>
-</body>
-</html>
+  </script> -->
